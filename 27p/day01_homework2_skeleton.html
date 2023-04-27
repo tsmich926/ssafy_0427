@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta charset="utf8">
+  <title>Hello, world</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p id="text1">첫번째 입력 : {{message}}</p>
+  <input id="message" type="text" v-model="message">
+  <br>
+  <p id="text2">두번째 입력 : {{message2}}</p>
+  <input id="message2" type="text" v-model="message2">
+  <br>
+  <p id="plus">합산입력 : {{message + message2}}</p>
+</div>
+
+
+<script type="text/javascript">
+   var app = new Vue({
+        el : '#app',
+        data: {
+          message:'',
+          message2:''
+
+        }
+   });
+   
+
+</script>
+
+</body>

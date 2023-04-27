@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ message }}</p>
+    <p>{{ movie }}</p>
+    <p>{{ message }}</p>
+    <p>{{ movie }}</p>
+    <p>{{ message }}</p>
+    <p>{{ movie }}</p>
+    <button v-on:click="getLotto">get lucky</button>
+  </div>
+
+  <!-- Vue CDN -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+        movie: '아바타-1234',
+      },
+      methods: {
+        print: function() {
+          console.log('print 입니당')
+        },
+        bye() {
+          // this.message = 'Bye vue'
+          this.message = this.message + 'a'
+        },
+        arrowBye: () => {
+          this.message = 'Arrow function'
+          console.log(this)
+        },
+        getLotto() {
+        const lotto = _.sampleSize(_.range(1,46),6)
+        console.log(lotto)
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>
